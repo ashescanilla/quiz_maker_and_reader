@@ -147,3 +147,6 @@ def main_menu():
         else:
             print(Fore.RED + "❌ Invalid choice. Please try again.")
             time.sleep(1)
+
+if __name__ == "__main__":
+    main_menu()
