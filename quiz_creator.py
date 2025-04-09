@@ -102,3 +102,6 @@ def add_question(file_name):
             'd': d,
             'answer': answer
         }
+
+        save_question_to_file(file_name, question_data)
+        animated_text("✅ Question saved successfully!", Fore.GREEN, 0.1)
