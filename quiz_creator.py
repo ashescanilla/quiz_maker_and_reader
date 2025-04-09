@@ -114,3 +114,7 @@ def add_question(file_name):
             view_all_questions(file_name)
             input("\nPress Enter to return to the main menu...")
             break     
+
+# Function to display the main menu and handle user choices
+def main_menu():
+    file_name = "quiz_data.txt"
