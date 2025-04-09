@@ -127,3 +127,4 @@ def main_menu():
         print(Fore.LIGHTMAGENTA_EX + "\nWhat would you like to do?")
 
         print(f"{Fore.GREEN}1. {Fore.RESET}Add a question")
+        print(f"{Fore.CYAN}2. {Fore.RESET}Remove a question")
