@@ -93,3 +93,12 @@ def add_question(file_name):
                 break
             else:
                 print(Fore.RED + "❌ Invalid choice. Please enter A, B, C, or D.")
+
+        question_data = {
+            'question': question,
+            'a': a,
+            'b': b,
+            'c': c,
+            'd': d,
+            'answer': answer
+        }
