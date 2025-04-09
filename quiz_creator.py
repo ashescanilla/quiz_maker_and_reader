@@ -16,3 +16,14 @@ def animated_text(text, color=Fore.WHITE, delay=0.05):
         print(color + char, end='', flush=True)
         time.sleep(delay)
     print()
+
+# Function to save question to file
+def save_question_to_file(file_name, question_data):
+    with open(file_name, 'a') as file:
+        file.write(f"QUESTION: {question_data['question']}\n")
+        file.write(f"A. {question_data['a']}\n")
+        file.write(f"B. {question_data['b']}\n")
+        file.write(f"C. {question_data['c']}\n")
+        file.write(f"D. {question_data['d']}\n")
+        file.write(f"ANSWER: {question_data['answer'].upper()}\n")
+        file.write("---\n")
