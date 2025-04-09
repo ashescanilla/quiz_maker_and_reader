@@ -105,3 +105,6 @@ def add_question(file_name):
 
         save_question_to_file(file_name, question_data)
         animated_text("✅ Question saved successfully!", Fore.GREEN, 0.1)
+
+        again = input(Fore.CYAN + "➕ Add another question? Enter 1 to continue or 4 to stop: ").strip()
+        if again == '4':
