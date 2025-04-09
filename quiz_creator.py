@@ -144,3 +144,6 @@ def main_menu():
         elif user_choice == '4':
             animated_text("\n🚀 Exiting the program. See you soon!", Fore.MAGENTA, 0.1)
             sys.exit()
+        else:
+            print(Fore.RED + "❌ Invalid choice. Please try again.")
+            time.sleep(1)
