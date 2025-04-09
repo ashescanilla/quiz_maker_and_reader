@@ -129,3 +129,4 @@ def main_menu():
         print(f"{Fore.GREEN}1. {Fore.RESET}Add a question")
         print(f"{Fore.CYAN}2. {Fore.RESET}Remove a question")
         print(f"{Fore.YELLOW}3. {Fore.RESET}View all questions")
+        print(f"{Fore.RED}4. {Fore.RESET}Exit")
