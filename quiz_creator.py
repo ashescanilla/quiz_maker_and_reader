@@ -35,3 +35,17 @@ def view_all_questions(file_name):
         return
     with open(file_name, 'r') as file:
         print(Fore.GREEN + file.read())
+
+# Function to remove a question (basic version that just removes the last question)
+def remove_last_question(file_name):
+    if not os.path.exists(file_name):
+        print(Fore.RED + "No questions to remove!")
+        return
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+    if len(lines) < 7:
+        print(Fore.RED + "❌ Not enough data to remove a question.")
+        return
+    with open(file_name, 'w') as file:
+        file.writelines(lines[:-7])
+    print(Fore.GREEN + "✅ Last question removed successfully!")
