@@ -27,3 +27,11 @@ def save_question_to_file(file_name, question_data):
         file.write(f"D. {question_data['d']}\n")
         file.write(f"ANSWER: {question_data['answer'].upper()}\n")
         file.write("---\n")
+
+# Function to view all questions
+def view_all_questions(file_name):
+    if not os.path.exists(file_name):
+        print(Fore.RED + "No questions found! Please add questions first.")
+        return
+    with open(file_name, 'r') as file:
+        print(Fore.GREEN + file.read())
