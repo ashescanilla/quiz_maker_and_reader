@@ -85,3 +85,11 @@ def add_question(file_name):
 
         animated_text(" • Enter Option D:", Fore.YELLOW, 0.1)
         d = input(f"{Style.BRIGHT}{Fore.CYAN}Option D: {Style.RESET_ALL}").strip()
+
+        while True:
+            animated_text("✅ Enter the correct answer (A/B/C/D):", Fore.GREEN, 0.1)
+            answer = input(f"{Style.BRIGHT}{Fore.WHITE}Answer: {Style.RESET_ALL}").strip().upper()
+            if answer in ['A', 'B', 'C', 'D']:
+                break
+            else:
+                print(Fore.RED + "❌ Invalid choice. Please enter A, B, C, or D.")
