@@ -141,3 +141,6 @@ def main_menu():
         elif user_choice == '3':
             view_all_questions(file_name)
             input("\nPress Enter to return to menu...")
+        elif user_choice == '4':
+            animated_text("\n🚀 Exiting the program. See you soon!", Fore.MAGENTA, 0.1)
+            sys.exit()
