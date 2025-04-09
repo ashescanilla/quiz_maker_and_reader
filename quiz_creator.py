@@ -108,3 +108,9 @@ def add_question(file_name):
 
         again = input(Fore.CYAN + "➕ Add another question? Enter 1 to continue or 4 to stop: ").strip()
         if again == '4':
+            animated_text("\n🚀 Quiz creation finished!", Fore.MAGENTA, 0.1)
+            print(f"{Style.BRIGHT}{Fore.YELLOW}{file_name}{Style.RESET_ALL}")
+            animated_text("\n📄 Showing all saved questions...\n", Fore.LIGHTWHITE_EX, 0.08)
+            view_all_questions(file_name)
+            input("\nPress Enter to return to the main menu...")
+            break     
