@@ -135,3 +135,6 @@ def main_menu():
 
         if user_choice == '1':
             add_question(file_name)
+        elif user_choice == '2':
+            remove_last_question(file_name)
+            input("\nPress Enter to return to menu...")
