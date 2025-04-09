@@ -5,3 +5,7 @@ import sys
 
 # Initialize Colorama
 init(autoreset=True)
+
+# Optional: clear terminal for better UI
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
