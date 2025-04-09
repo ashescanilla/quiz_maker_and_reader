@@ -125,3 +125,5 @@ def main_menu():
         print(Fore.LIGHTMAGENTA_EX + Style.BRIGHT + "\n📚 Welcome to the Quiz Creator!")
         print(Fore.LIGHTWHITE_EX + "💡 Create your own quiz questions and answers effortlessly with this program!")
         print(Fore.LIGHTMAGENTA_EX + "\nWhat would you like to do?")
+
+        print(f"{Fore.GREEN}1. {Fore.RESET}Add a question")
