@@ -130,3 +130,5 @@ def main_menu():
         print(f"{Fore.CYAN}2. {Fore.RESET}Remove a question")
         print(f"{Fore.YELLOW}3. {Fore.RESET}View all questions")
         print(f"{Fore.RED}4. {Fore.RESET}Exit")
+
+        user_choice = input(Fore.LIGHTMAGENTA_EX + "\nPick an option (1/2/3/4): ").strip()
