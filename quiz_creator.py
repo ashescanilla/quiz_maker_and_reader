@@ -138,3 +138,6 @@ def main_menu():
         elif user_choice == '2':
             remove_last_question(file_name)
             input("\nPress Enter to return to menu...")
+        elif user_choice == '3':
+            view_all_questions(file_name)
+            input("\nPress Enter to return to menu...")
