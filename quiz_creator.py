@@ -123,3 +123,4 @@ def main_menu():
         clear()
         print_ascii_art()
         print(Fore.LIGHTMAGENTA_EX + Style.BRIGHT + "\n📚 Welcome to the Quiz Creator!")
+        print(Fore.LIGHTWHITE_EX + "💡 Create your own quiz questions and answers effortlessly with this program!")
