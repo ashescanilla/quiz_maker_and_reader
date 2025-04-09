@@ -118,3 +118,7 @@ def add_question(file_name):
 # Function to display the main menu and handle user choices
 def main_menu():
     file_name = "quiz_data.txt"
+
+    while True:
+        clear()
+        print_ascii_art()
