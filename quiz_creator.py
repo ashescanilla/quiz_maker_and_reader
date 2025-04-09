@@ -66,3 +66,22 @@ def print_ascii_art():
  '----------------'  '----------------'  '----------------'  '----------------' 
     """)
     time.sleep(1)
+
+# Function to add a new question
+def add_question(file_name):
+    while True:
+        clear()
+        animated_text("💭 Enter your question:", Fore.WHITE, 0.1)
+        question = input(f"{Style.BRIGHT}{Fore.GREEN}Your Question: {Style.RESET_ALL}").strip()
+
+        animated_text(" • Enter Option A:", Fore.YELLOW, 0.1)
+        a = input(f"{Style.BRIGHT}{Fore.CYAN}Option A: {Style.RESET_ALL}").strip()
+
+        animated_text(" • Enter Option B:", Fore.YELLOW, 0.1)
+        b = input(f"{Style.BRIGHT}{Fore.CYAN}Option B: {Style.RESET_ALL}").strip()
+
+        animated_text(" • Enter Option C:", Fore.YELLOW, 0.1)
+        c = input(f"{Style.BRIGHT}{Fore.CYAN}Option C: {Style.RESET_ALL}").strip()
+
+        animated_text(" • Enter Option D:", Fore.YELLOW, 0.1)
+        d = input(f"{Style.BRIGHT}{Fore.CYAN}Option D: {Style.RESET_ALL}").strip()
