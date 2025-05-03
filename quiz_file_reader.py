@@ -134,3 +134,22 @@ question_label = tkinter_module.Label(
     font=("Arial", 20, "bold"), justify="center", bg="#ffffff", padx=20, pady=20
 )
 question_label.pack(pady=30)
+
+# Buttons for A, B, C, D with custom styles
+answer_buttons = []
+button_style_config = {
+    "font": ("Arial", 14),
+    "width": 40,
+    "relief": "raised",
+    "bg": "#4CAF50",
+    "fg": "white",
+    "activebackground": "#45a049",
+    "activeforeground": "white",
+    "padx": 20,
+    "pady": 10
+}
+
+for _ in range(4):
+    choice_button = tkinter_module.Button(quiz_window, text="", **button_style_config)
+    choice_button.pack(pady=5)
+    answer_buttons.append(choice_button)
