@@ -62,4 +62,27 @@ def load_new_random_question():
     remaining_time_seconds = 15
     timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
     start_timer()
-    
+
+# Function to check if the selected option is correct
+def check_user_answer(selected_letter):
+    global timer_reference, score_counter
+
+    if selected_letter == correct_answer_choice_letter:
+        feedback_label.config(text="✅ Correct!", fg="blue", font=("Arial", 16, "bold"))
+        score_counter += 1
+        score_label.config(text=f"Score: {score_counter}")
+    else:
+        correct_index = ord(correct_answer_choice_letter) - 65
+        correct_answer_text = current_choices_list[correct_index]
+        feedback_label.config(
+            text=f"❌ Incorrect. The correct answer is: {correct_answer_choice_letter}. {correct_answer_text}",
+            fg="red", font=("Arial", 16, "bold")
+        )
+
+    for answer_button in answer_buttons:
+        answer_button.config(state="disabled")
+
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
+
+    quiz_window.after(2000, load_new_random_question)
