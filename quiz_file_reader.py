@@ -86,3 +86,18 @@ def check_user_answer(selected_letter):
         quiz_window.after_cancel(timer_reference)
 
     quiz_window.after(2000, load_new_random_question)
+
+# Timer countdown function
+def start_timer():
+    global remaining_time_seconds, timer_reference
+
+    if remaining_time_seconds > 0:
+        remaining_time_seconds -= 1
+        timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
+        timer_reference = quiz_window.after(1000, start_timer)
+    else:
+        feedback_label.config(text="❌ Time's up! Moving to the next question...", fg="red", font=("Arial", 16, "bold"))
+        for answer_button in answer_buttons:
+            answer_button.config(state="disabled")
+        quiz_window.after(2000, load_new_random_question)
+        
