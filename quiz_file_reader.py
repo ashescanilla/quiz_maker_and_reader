@@ -38,3 +38,27 @@ def load_questions_from_custom_file(file_path):
         sys.exit(1)
 
     return list_of_questions
+
+# Function to load a new random question and reset the timer
+def load_new_random_question():
+    global current_question_text, current_choices_list, correct_answer_choice_letter, timer_reference
+    global remaining_time_seconds
+
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
+
+    current_question_text, current_choices_list, correct_answer_choice_letter = random.choice(list_of_quiz_questions)
+    question_label.config(text=current_question_text)
+
+    for button_index, choice_button in enumerate(answer_buttons):
+        choice_letter = chr(65 + button_index)
+        choice_button.config(
+            text=f"{choice_letter}. {current_choices_list[button_index]}",
+            state="normal",
+            command=lambda selected_letter=choice_letter: check_user_answer(selected_letter)
+        )
+
+    feedback_label.config(text="")
+    remaining_time_seconds = 15
+    timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
+    start_timer()
