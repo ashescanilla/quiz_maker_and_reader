@@ -173,3 +173,6 @@ remaining_time_seconds = 15
 timer_reference = None
 score_counter = 0
 load_new_random_question()
+
+# Run the GUI loop
+quiz_window.mainloop()
