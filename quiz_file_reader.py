@@ -100,4 +100,10 @@ def start_timer():
         for answer_button in answer_buttons:
             answer_button.config(state="disabled")
         quiz_window.after(2000, load_new_random_question)
-        
+
+# GUI SETUP
+quiz_window = tkinter_module.Tk()
+quiz_window.title("Multiple Choice Quiz")
+quiz_window.geometry("700x600")
+quiz_window.resizable(False, False)
+quiz_window.configure(bg="#ffffff") 
