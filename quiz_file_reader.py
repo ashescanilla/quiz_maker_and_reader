@@ -107,3 +107,7 @@ quiz_window.title("Multiple Choice Quiz")
 quiz_window.geometry("700x600")
 quiz_window.resizable(False, False)
 quiz_window.configure(bg="#ffffff") 
+
+# Load questions from file
+quiz_file_name = "quiz_data.txt"
+list_of_quiz_questions = load_questions_from_custom_file(quiz_file_name)
