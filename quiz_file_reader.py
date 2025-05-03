@@ -159,3 +159,11 @@ feedback_label = tkinter_module.Label(
     quiz_window, text="", font=("Arial", 16), bg="#ffffff"
 )
 feedback_label.pack(pady=10)
+
+# Next question button
+next_question_button = tkinter_module.Button(
+    quiz_window, text="Next Question", font=("Arial", 12),
+    bg="#008CBA", fg="white", activebackground="#006F8E", width=20, height=2,
+    command=load_new_random_question
+)
+next_question_button.pack(pady=20)
