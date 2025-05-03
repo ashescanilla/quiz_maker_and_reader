@@ -127,3 +127,10 @@ score_label = tkinter_module.Label(
     font=("Arial", 14), bg="#ffffff", anchor="e"
 )
 score_label.pack(side="right", padx=20)
+
+# Question display label
+question_label = tkinter_module.Label(
+    quiz_window, text="Question will appear here", wraplength=650,
+    font=("Arial", 20, "bold"), justify="center", bg="#ffffff", padx=20, pady=20
+)
+question_label.pack(pady=30)
