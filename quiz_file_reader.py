@@ -153,3 +153,9 @@ for _ in range(4):
     choice_button = tkinter_module.Button(quiz_window, text="", **button_style_config)
     choice_button.pack(pady=5)
     answer_buttons.append(choice_button)
+
+# Feedback label
+feedback_label = tkinter_module.Label(
+    quiz_window, text="", font=("Arial", 16), bg="#ffffff"
+)
+feedback_label.pack(pady=10)
