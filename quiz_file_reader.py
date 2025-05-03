@@ -111,3 +111,19 @@ quiz_window.configure(bg="#ffffff")
 # Load questions from file
 quiz_file_name = "quiz_data.txt"
 list_of_quiz_questions = load_questions_from_custom_file(quiz_file_name)
+
+# Top info frame (timer and score)
+top_info_frame = tkinter_module.Frame(quiz_window, bg="#ffffff") 
+top_info_frame.pack(fill="x", pady=(10, 0))
+
+timer_label = tkinter_module.Label(
+    top_info_frame, text="Time remaining: 15 seconds",
+    font=("Arial", 14), bg="#ffffff", anchor="w"
+)
+timer_label.pack(side="left", padx=20)
+
+score_label = tkinter_module.Label(
+    top_info_frame, text="Score: 0",
+    font=("Arial", 14), bg="#ffffff", anchor="e"
+)
+score_label.pack(side="right", padx=20)
