@@ -167,3 +167,9 @@ next_question_button = tkinter_module.Button(
     command=load_new_random_question
 )
 next_question_button.pack(pady=20)
+
+# Initialize game state variables
+remaining_time_seconds = 15
+timer_reference = None
+score_counter = 0
+load_new_random_question()
