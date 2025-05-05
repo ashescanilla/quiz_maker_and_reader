@@ -26,7 +26,9 @@ def load_questions_from_custom_file(file_path):
 
     try:
 # Open file in read mode
-
+        with open(file_path, 'r') as quiz_file:
+            for line in quiz_file:
+                line = line.strip()
 # Check if line starts with "QUESTION:"
 
 # If question already parsed, add it to list
