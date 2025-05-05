@@ -39,13 +39,18 @@ def load_questions_from_custom_file(file_path):
                     choices_list = []
                     correct_choice_letter = None
 # Check if line contains the correct answer
-
+                elif line.startswith("ANSWER:"):
+                    correct_choice_letter = line.replace("ANSWER: ", "").strip()
 # Check if line contains a choice (A., B., C., or D.)
-
+                elif line.startswith(("A.", "B.", "C.", "D.")):
+                    choices_list.append(line[3:].strip())
 # After loop, add the last question
-
+            if question_text:
+                list_of_questions.append((question_text, choices_list, correct_choice_letter))
+    except FileNotFoundError:
 # Show error if file is not found
-
+        messagebox.showerror("File Not Found", f"The file '{file_path}' could not be found.")
+        sys.exit(1)
 # Check if no questions were parsed
 
 # Define function to load and display a new random question
