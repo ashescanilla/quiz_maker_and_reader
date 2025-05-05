@@ -102,17 +102,25 @@ def check_user_answer(selected_letter):
     for answer_button in answer_buttons:
         answer_button.config(state="disabled")
 # Cancel timer and load next question after delay
-
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
+    quiz_window.after(2000, load_new_random_question)
 # Define function to start the countdown timer
-
+def start_timer():
+    global remaining_time_seconds, timer_reference
+    if remaining_time_seconds > 0:
 # Decrease time and update label
-
+        remaining_time_seconds -= 1
+        timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
 # Call start_timer again after 1 second
-
+        timer_reference = quiz_window.after(1000, start_timer)
+    else:
 # Time ran out, show timeout message and disable buttons
-
+        feedback_label.config(text="❌ Time's up! Moving to the next question...", fg="red", font=("Arial", 16, "bold"))
+        for answer_button in answer_buttons:
+            answer_button.config(state="disabled")
 # Load new question after 2 seconds
-
+        quiz_window.after(2000, load_new_random_question)
 # Define function to show the start screen of the app
 
 # -> Set window title
