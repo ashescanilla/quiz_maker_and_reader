@@ -151,7 +151,13 @@ def show_start_screen():
         start_window.destroy()
         launch_quiz()
 # Create "Start Quiz" button
-
+    start_button = tkinter_module.Button(
+        start_window, text="Start Quiz", font=("Arial", 16),
+        bg="#008CBA", fg="white", activebackground="#005F8E",
+        width=20, height=2, command=start_quiz
+    )
+    start_button.place(relx=0.5, rely=0.85, anchor="center")
+    start_window.mainloop()
 # Define function to launch quiz window
 
 # Ask confirmation on window close
