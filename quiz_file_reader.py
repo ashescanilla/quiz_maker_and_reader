@@ -240,7 +240,7 @@ def launch_quiz():
             show_start_screen()
         else:
             quiz_window.destroy()
-            
+
     exit_button = tkinter_module.Button(
         quiz_window, text="Exit", font=("Arial", 12),
         bg="#f44336", fg="white", activebackground="#c62828", width=20, height=2,
@@ -248,9 +248,12 @@ def launch_quiz():
     )
     exit_button.pack(pady=(0, 20))
 # Initialize game variables
-
+    remaining_time_seconds = 15
+    timer_reference = None
+    score_counter = 0
 # -> Start quiz
-
+    load_new_random_question()
 # -> Start event loop
-
+    quiz_window.mainloop()
 # Start the application
+show_start_screen()
