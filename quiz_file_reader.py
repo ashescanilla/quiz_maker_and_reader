@@ -73,18 +73,36 @@ def load_new_random_question():
     remaining_time_seconds = 15
     timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
     start_timer()
-    
+
 # Function: Check User Answer (on button press)
+def check_user_answer(selected_letter):
+    global timer_reference, score_counter
 # -> Compare selected letter with correct answer
+    if selected_letter == correct_answer_choice_letter:
 # -> If correct:
 #   -> Show "✅ Correct!" message
 #   -> Increase score
+        feedback_label.config(text="✅ Correct!", fg="blue", font=("Arial", 16, "bold"))
+        score_counter += 1
+        score_label.config(text=f"Score: {score_counter}")
+    else:
 # -> If incorrect:
 #   -> Show "❌ Incorrect" and display correct answer
+        correct_index = ord(correct_answer_choice_letter) - 65
+        correct_answer_text = current_choices_list[correct_index]
+        feedback_label.config(
+            text=f"❌ Incorrect. The correct answer is: {correct_answer_choice_letter}. {correct_answer_text}",
+            fg="red", font=("Arial", 16, "bold")
+        )
 # -> Disable all answer buttons
+    for answer_button in answer_buttons:
+        answer_button.config(state="disabled")
 # -> Cancel countdown timer
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
 # -> After short delay (2s), load new random question
-
+    quiz_window.after(2000, load_new_random_question)
+    
 # Function: Start Timer Countdown
 # -> If time left:
 #   -> Decrease by 1
