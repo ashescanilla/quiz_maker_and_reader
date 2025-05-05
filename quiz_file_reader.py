@@ -16,7 +16,7 @@ import sys
 # -> Reads file line by line and parses question, choices, and answer
 # -> If file not found, show error and exit
 # -> If no valid questions, show error and exit
-
+def load_questions_from_custom_file(file_path):
 # Initialize empty list to store questions
 
 # Temporary variables to hold parsed content
