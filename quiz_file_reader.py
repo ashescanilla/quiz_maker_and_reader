@@ -216,15 +216,23 @@ def launch_quiz():
         "padx": 20,
         "pady": 10
     }
-    
+
     for _ in range(4):
         choice_button = tkinter_module.Button(quiz_window, text="", **button_style_config)
         choice_button.pack(pady=5)
         answer_buttons.append(choice_button)
 # Create feedback label
-
+    feedback_label = tkinter_module.Label(
+        quiz_window, text="", font=("Arial", 16), bg="#ffffff"
+    )
+    feedback_label.pack(pady=10)
 # Create "Next Question" button
-
+    next_question_button = tkinter_module.Button(
+        quiz_window, text="Next Question", font=("Arial", 12),
+        bg="#008CBA", fg="white", activebackground="#006F8E", width=20, height=2,
+        command=load_new_random_question
+    )
+    next_question_button.pack(pady=20)
 # Create "Exit" button
 
 # Initialize game variables
