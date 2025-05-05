@@ -1,8 +1,12 @@
 # Import necessary modules:
 # -> tkinter (GUI)
+import tkinter as tk
 # -> messagebox (for errors)
+from tkinter import messagebox
 # -> random (for random question selection)
+import random
 # -> sys (for exiting the app)
+import sys
 
 # Function: Load Questions from Custom File
 # -> Initialize empty question list
