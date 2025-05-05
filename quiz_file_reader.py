@@ -159,7 +159,11 @@ def show_start_screen():
     start_button.place(relx=0.5, rely=0.85, anchor="center")
     start_window.mainloop()
 # Define function to launch quiz window
-
+def launch_quiz():
+    global quiz_window, question_label, answer_buttons, feedback_label
+    global timer_label, score_label, remaining_time_seconds, timer_reference, score_counter
+    global list_of_quiz_questions
+    def handle_window_close():
 # Ask confirmation on window close
 
 # Create main quiz window
