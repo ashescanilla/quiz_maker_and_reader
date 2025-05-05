@@ -52,7 +52,10 @@ def load_questions_from_custom_file(file_path):
         messagebox.showerror("File Not Found", f"The file '{file_path}' could not be found.")
         sys.exit(1)
 # Check if no questions were parsed
-
+    if not list_of_questions:
+        messagebox.showerror("Empty File", "The quiz file is empty or has formatting errors.")
+        sys.exit(1)
+    return list_of_questions
 # Define function to load and display a new random question
 
 # Declare global variables used in this function
