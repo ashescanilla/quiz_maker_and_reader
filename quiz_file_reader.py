@@ -110,10 +110,19 @@ def start_timer():
 #   -> Decrease by 1
 #   -> Update timer label
 #   -> Set timer to call itself after 1 second
+    if remaining_time_seconds > 0:
+        remaining_time_seconds -= 1
+        timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
+        timer_reference = quiz_window.after(1000, start_timer)
+    else:
 # -> Else:
 #   -> Show "❌ Time's up!"
 #   -> Disable buttons
 #   -> After 2 seconds, load next question
+        feedback_label.config(text="❌ Time's up! Moving to the next question...", fg="red", font=("Arial", 16, "bold"))
+        for answer_button in answer_buttons:
+            answer_button.config(state="disabled")
+        quiz_window.after(2000, load_new_random_question)
 
 # GUI Setup:
 # -> Create main window
