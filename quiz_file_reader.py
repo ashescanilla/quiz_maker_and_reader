@@ -30,9 +30,10 @@ def load_questions_from_custom_file(file_path):
             for line in quiz_file:
                 line = line.strip()
 # Check if line starts with "QUESTION:"
-
+                if line.startswith("QUESTION:")
 # If question already parsed, add it to list
-
+                    if question_text:
+                        list_of_questions.append((question_text, choices_list, correct_choice_letter))
 # Store new question and reset choices
 
 # Check if line contains the correct answer
