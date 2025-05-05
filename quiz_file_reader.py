@@ -144,7 +144,8 @@ def show_start_screen():
         bg_label.place(x=0, y=0, relwidth=1, relheight=1)
     except FileNotFoundError:
 # If image not found, use plain background
-
+        messagebox.showwarning("Image Missing", f"Background image not found at:\n{image_path}\nUsing plain background.")
+        start_window.configure(bg="#f0f0f0")
 # Define function to start the quiz
 
 # Create "Start Quiz" button
