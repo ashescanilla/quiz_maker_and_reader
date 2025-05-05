@@ -18,7 +18,7 @@ import sys
 # -> If no valid questions, show error and exit
 def load_questions_from_custom_file(file_path):
 # Initialize empty list to store questions
-
+    list_of_questions = []
 # Temporary variables to hold parsed content
 
 # Open file in read mode
