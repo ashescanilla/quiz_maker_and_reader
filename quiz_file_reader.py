@@ -35,7 +35,9 @@ def load_questions_from_custom_file(file_path):
                     if question_text:
                         list_of_questions.append((question_text, choices_list, correct_choice_letter))
 # Store new question and reset choices
-
+                    question_text = line.replace("QUESTION: ", "")
+                    choices_list = []
+                    correct_choice_letter = None
 # Check if line contains the correct answer
 
 # Check if line contains a choice (A., B., C., or D.)
