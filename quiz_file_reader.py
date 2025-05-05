@@ -5,6 +5,12 @@
 # -> PIL.Image and PIL.ImageTk (for opening and displaying images)
 # -> random (for selecting random questions)
 # -> sys (for exiting the program if an error occurs)
+import os
+import tkinter as tkinter_module
+from tkinter import messagebox
+from PIL import Image, ImageTk
+import random
+import sys
 
 # Define function to load questions from a text file:
 # -> Reads file line by line and parses question, choices, and answer
