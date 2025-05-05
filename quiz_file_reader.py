@@ -165,7 +165,11 @@ def launch_quiz():
     global list_of_quiz_questions
     def handle_window_close():
 # Ask confirmation on window close
-
+        if messagebox.askyesno("Exit Quiz", f"You scored {score_counter} points.\nDo you want to try again?"):
+            quiz_window.destroy()
+            show_start_screen()
+        else:
+            quiz_window.destroy()
 # Create main quiz window
 
 # -> Set title
