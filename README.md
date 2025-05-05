@@ -11,11 +11,13 @@ This is a Python-powered quiz application that enables you to create, view, and 
 ## 📄Requirements
 To run this project, ensure that you have the following installed:
    - **Python 3.x**: The program requires Python 3.6 or higher to run.
-   - **Colorama**: To execute this software, you must first install the 'colorama' package. To do so, type the following command on your terminal: 
+   - **Colorama**: To execute this software, you must first install the 'colorama' package. To do so, type the following command on your terminal:
+   - **Tkinter**
+   - **Pillow**: For handling images. You can install Pillow using pip:
+     
 ```bash
 pip install colorama
-   - **Tkinter**
-   - **Pillow: For handling images. You can install Pillow using pip:
+
 ```bash
 pip install Pillow
 
