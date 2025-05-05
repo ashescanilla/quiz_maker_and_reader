@@ -102,8 +102,10 @@ def check_user_answer(selected_letter):
         quiz_window.after_cancel(timer_reference)
 # -> After short delay (2s), load new random question
     quiz_window.after(2000, load_new_random_question)
-    
+
 # Function: Start Timer Countdown
+def start_timer():
+    global remaining_time_seconds, timer_reference
 # -> If time left:
 #   -> Decrease by 1
 #   -> Update timer label
