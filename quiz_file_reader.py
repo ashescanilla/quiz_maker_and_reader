@@ -171,11 +171,14 @@ def launch_quiz():
         else:
             quiz_window.destroy()
 # Create main quiz window
-
+    quiz_window = tkinter_module.Tk()
 # -> Set title
-
+    quiz_window.title("Multiple Choice Quiz")
 # -> Set size
-
+    quiz_window.geometry("700x600")
+    quiz_window.resizable(False, False)
+    quiz_window.configure(bg="#ffffff")
+    quiz_window.protocol("WM_DELETE_WINDOW", handle_window_close)
 # Load quiz questions from file
 
 # Create top info frame
