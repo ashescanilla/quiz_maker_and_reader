@@ -65,11 +65,17 @@ def load_new_random_question():
     if timer_reference:
         quiz_window.after_cancel(timer_reference)
 # Pick a random question
-
+    current_question_text, current_choices_list, correct_answer_choice_letter = random.choice(list_of_quiz_questions)
 # Display question text
-
+    question_label.config(text=current_question_text)
 # Display each answer choice with corresponding letter (A-D)
-
+    for button_index, choice_button in enumerate(answer_buttons):
+        choice_letter = chr(65 + button_index)
+        choice_button.config(
+            text=f"{choice_letter}. {current_choices_list[button_index]}",
+            state="normal",
+            command=lambda selected_letter=choice_letter: check_user_answer(selected_letter)
+        )
 # Clear previous feedback
 
 # Reset and show timer
