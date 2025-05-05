@@ -234,7 +234,19 @@ def launch_quiz():
     )
     next_question_button.pack(pady=20)
 # Create "Exit" button
-
+    def exit_quiz():
+        if messagebox.askyesno("Quiz Finished", f"You scored {score_counter} points.\nDo you want to try again?"):
+            quiz_window.destroy()
+            show_start_screen()
+        else:
+            quiz_window.destroy()
+            
+    exit_button = tkinter_module.Button(
+        quiz_window, text="Exit", font=("Arial", 12),
+        bg="#f44336", fg="white", activebackground="#c62828", width=20, height=2,
+        command=exit_quiz
+    )
+    exit_button.pack(pady=(0, 20))
 # Initialize game variables
 
 # -> Start quiz
