@@ -180,15 +180,29 @@ def launch_quiz():
     quiz_window.configure(bg="#ffffff")
     quiz_window.protocol("WM_DELETE_WINDOW", handle_window_close)
 # Load quiz questions from file
-
+    quiz_file_name = "quiz_data.txt"
+    list_of_quiz_questions = load_questions_from_custom_file(quiz_file_name)
 # Create top info frame
-
+    top_info_frame = tkinter_module.Frame(quiz_window, bg="#ffffff") 
+    top_info_frame.pack(fill="x", pady=(10, 0))
 # Create timer label (left side)
-
+    timer_label = tkinter_module.Label(
+        top_info_frame, text="Time remaining: 15 seconds",
+        font=("Arial", 14), bg="#ffffff", anchor="w"
+    )
+    timer_label.pack(side="left", padx=20)
 # Create score label (right side)
-
+    score_label = tkinter_module.Label(
+        top_info_frame, text="Score: 0",
+        font=("Arial", 14), bg="#ffffff", anchor="e"
+    )
+    score_label.pack(side="right", padx=20)
 # Create question label
-
+    question_label = tkinter_module.Label(
+        quiz_window, text="Question will appear here", wraplength=650,
+        font=("Arial", 20, "bold"), justify="center", bg="#ffffff", padx=20, pady=20
+    )
+    question_label.pack(pady=30)
 # Create styled answer buttons (A-D)
 
 # Create feedback label
