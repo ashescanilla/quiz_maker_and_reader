@@ -138,9 +138,11 @@ def show_start_screen():
         bg_image = bg_image.resize((700, 600), Image.Resampling.LANCZOS)
         background = ImageTk.PhotoImage(bg_image)
 # Set image as background
-
+        bg_label = tkinter_module.Label(start_window, image=background)
 # -> Prevent garbage collection
-
+        bg_label.image = background
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+    except FileNotFoundError:
 # If image not found, use plain background
 
 # Define function to start the quiz
