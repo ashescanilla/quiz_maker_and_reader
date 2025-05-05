@@ -147,7 +147,9 @@ def show_start_screen():
         messagebox.showwarning("Image Missing", f"Background image not found at:\n{image_path}\nUsing plain background.")
         start_window.configure(bg="#f0f0f0")
 # Define function to start the quiz
-
+    def start_quiz():
+        start_window.destroy()
+        launch_quiz()
 # Create "Start Quiz" button
 
 # Define function to launch quiz window
