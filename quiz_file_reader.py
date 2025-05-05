@@ -122,13 +122,14 @@ def start_timer():
 # Load new question after 2 seconds
         quiz_window.after(2000, load_new_random_question)
 # Define function to show the start screen of the app
-
+def show_start_screen():
+    start_window = tkinter_module.Tk()
 # -> Set window title
-
+    start_window.title("Start Quiz")
 # -> Set window size
-
+    start_window.geometry("700x600")
 # -> Disable window resizing
-
+    start_window.resizable(False, False)
 # Load background image safely
 
 # Set image as background
