@@ -20,7 +20,11 @@ def load_questions_from_custom_file(file_path):
 # Initialize empty list to store questions
     list_of_questions = []
 # Temporary variables to hold parsed content
+    question_text = None
+    choices_list = []
+    correct_choice_letter = None
 
+    try:
 # Open file in read mode
 
 # Check if line starts with "QUESTION:"
