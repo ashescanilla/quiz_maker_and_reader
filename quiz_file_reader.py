@@ -57,11 +57,13 @@ def load_questions_from_custom_file(file_path):
         sys.exit(1)
     return list_of_questions
 # Define function to load and display a new random question
-
+def load_new_random_question():
 # Declare global variables used in this function
-
+    global current_question_text, current_choices_list, correct_answer_choice_letter, timer_reference
+    global remaining_time_seconds
 # Cancel any running timer
-
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
 # Pick a random question
 
 # Display question text
