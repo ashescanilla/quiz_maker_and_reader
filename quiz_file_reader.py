@@ -77,11 +77,14 @@ def load_new_random_question():
             command=lambda selected_letter=choice_letter: check_user_answer(selected_letter)
         )
 # Clear previous feedback
-
+    feedback_label.config(text="")
 # Reset and show timer
-
+    remaining_time_seconds = 15
+    timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
+    start_timer()
 # Define function to check user's selected answer
-
+def check_user_answer(selected_letter):
+    global timer_reference, score_counter
 # If answer is correct
 
 # Show correct answer if user was wrong
