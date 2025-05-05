@@ -126,6 +126,8 @@ def start_timer():
 
 # GUI Setup:
 # -> Create main window
+def show_start_screen():
+    start_window = tkinter_module.Tk()
 # -> Set title, size, background color
 # -> Load questions using load_questions_from_custom_file()
 # -> Create top frame with:
