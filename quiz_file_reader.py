@@ -128,7 +128,12 @@ def start_timer():
 # -> Create main window
 def show_start_screen():
     start_window = tkinter_module.Tk()
-# -> Set title, size, background color
+# -> Set title, size
+    start_window = tkinter_module.Tk()
+    start_window.title("Start Quiz")
+    start_window.geometry("700x600")
+    start_window.resizable(False, False)
+
 # -> Load questions using load_questions_from_custom_file()
 # -> Create top frame with:
 #   -> Timer label (left)
