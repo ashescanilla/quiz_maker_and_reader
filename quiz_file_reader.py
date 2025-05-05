@@ -49,13 +49,31 @@ def load_questions_from_custom_file(file_path):
     return list_of_questions
 
 # Function: Load New Random Question
+def load_new_random_question():
+    global current_question_text, current_choices_list, correct_answer_choice_letter, timer_reference
+    global remaining_time_seconds
 # -> Cancel existing timer if running
+    if timer_reference:
+        quiz_window.after_cancel(timer_reference)
 # -> Randomly choose a question from the loaded list
+    current_question_text, current_choices_list, correct_answer_choice_letter = random.choice(list_of_quiz_questions)
 # -> Update question label on GUI
+    question_label.config(text=current_question_text)
 # -> Update answer buttons (A-D) with text and click handlers
+    for button_index, choice_button in enumerate(answer_buttons):
+        choice_letter = chr(65 + button_index)
+        choice_button.config(
+            text=f"{choice_letter}. {current_choices_list[button_index]}",
+            state="normal",
+            command=lambda selected_letter=choice_letter: check_user_answer(selected_letter)
+        )
 # -> Clear feedback label
+    feedback_label.config(text="")
 # -> Reset and start countdown timer
-
+    remaining_time_seconds = 15
+    timer_label.config(text=f"Time remaining: {remaining_time_seconds} seconds")
+    start_timer()
+    
 # Function: Check User Answer (on button press)
 # -> Compare selected letter with correct answer
 # -> If correct:
