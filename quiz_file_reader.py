@@ -131,7 +131,12 @@ def show_start_screen():
 # -> Disable window resizing
     start_window.resizable(False, False)
 # Load background image safely
-
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(script_dir, "quiz_background.jpg")
+    try:
+        bg_image = Image.open(image_path)
+        bg_image = bg_image.resize((700, 600), Image.Resampling.LANCZOS)
+        background = ImageTk.PhotoImage(bg_image)
 # Set image as background
 
 # -> Prevent garbage collection
