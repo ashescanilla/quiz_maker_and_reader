@@ -3,6 +3,10 @@
 # -> messagebox (for errors)
 # -> random (for random question selection)
 # -> sys (for exiting the app)
+import tkinter as tk
+from tkinter import messagebox
+import random
+import sys
 
 # Function: Load Questions from Custom File
 # -> Initialize empty question list
